@@ -12,5 +12,15 @@
   },
   "author": "Edward Bridges <ebridges@gmail.com>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/ebridges/single-page-app#readme"
+  "homepage": "https://bitbucket.org/ebridges/single-page-app#readme",
+  "devDependencies": {
+    "babel-core": "^5.6.18",
+    "babel-loader": "^5.3.1",
+    "node-libs-browser": "^0.5.2",
+    "react": "^0.13.3",
+    "react-hot-loader": "^1.2.8",
+    "react-router": "^0.13.3",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
+  }
 }
