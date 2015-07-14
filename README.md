@@ -3,6 +3,7 @@
 ### References
 * http://jmfurlott.com/tutorial-setting-up-a-single-page-react-web-app-with-react-router-and-webpack/
 * https://facebook.github.io/react/docs/thinking-in-react.html
+* https://github.com/Hacker0x01/react-datepicker
 
 ### Component Hierarchy
 
