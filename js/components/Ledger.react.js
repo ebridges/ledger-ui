@@ -22,7 +22,5 @@ let Ledger = React.createClass({
   }
 });
 
-
-
 //React.render(<Ledger username={username} categories={categories} columnLabels={columnLabels} transactions={transactions} />, document.body);
 export default Ledger;
