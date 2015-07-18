@@ -1,9 +1,11 @@
 # Single Page App
 
-### References
+### Bookmarks
 * http://jmfurlott.com/tutorial-setting-up-a-single-page-react-web-app-with-react-router-and-webpack/
 * https://facebook.github.io/react/docs/thinking-in-react.html
 * https://github.com/Hacker0x01/react-datepicker
+* http://babeljs.io/blog/2015/06/07/react-on-es6-plus/
+*
 
 ### Component Hierarchy
 
