@@ -2,10 +2,6 @@ import React from 'react';
 
 let TransactionTable = React.createClass({
     render: function() {
-      //let headers = ['Txn Date','Category', 'Description', 'Description (orig)', 'Amount'];
-
-      let rowHeaders = <TransactionTableHeader transactionHeaders={this.props.transactionHeaders} />;
-
       let rows = [];
       this.props.transactions.forEach(function(transaction) {
         rows.push(<TransactionRow transaction={transaction} key={transaction.id} />);
@@ -14,7 +10,7 @@ let TransactionTable = React.createClass({
       return (
         <table>
           <thead>
-            {rowHeaders}
+            <TransactionTableHeader columnLabels={this.props.columnLabels} />
           </thead>
           <tbody>
             {rows}
