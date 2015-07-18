@@ -8,7 +8,8 @@ let DateRangeCriteria = React.createClass({
       start_date: moment().subtract(6, 'months'),
       end_date: moment(),
     }
-  }
+  },
+  
   handleStartDateChange: function(date) {
     this.setState({
       start_date: date
