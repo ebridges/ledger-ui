@@ -1,4 +1,6 @@
 import React from 'react';
+import TransactionRow from './TransactionRow.react.js';
+import TransactionTableHeader from './TransactionTableHeader.react.js';
 
 let TransactionTable = React.createClass({
     render: function() {
