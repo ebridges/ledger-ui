@@ -1,6 +1,12 @@
 import React from 'react';
 
 let CategoryList = React.createClass({
+  handleCategoryChange: function() {
+      this.props.onCategoryChange(
+          this.refs.categorySelector.getDOMNode().value
+      );
+  },
+
   render: function() {
     let categoryOptions = [];
     this.props.categories.forEach(function(category) {
@@ -8,7 +14,7 @@ let CategoryList = React.createClass({
     });
 
     return (
-      <select value={this.props.selectedCategory}>
+      <select ref="categorySelector" value={this.props.selectedCategory} onChange={this.handleCategoryChange}>
         {categoryOptions}
       </select>
     );

@@ -14,13 +14,31 @@ let Ledger = React.createClass({
     }
   },
 
+  handleCategoryChange: function(selectedCategory) {
+      this.setState({
+          selected_category: selectedCategory
+      });
+  },
+
+  handleStartDateChange: function(startDate) {
+      this.setState({
+          start_date: startDate
+      });
+  },
+
+  handleEndDateChange: function(endDate) {
+      this.setState({
+          end_date: endDate
+      });
+  },
+
   render: function() {
     return (
       <div class="ledger">
         <div><h1>Ledger</h1></div>
         <div><LoginStatus username={this.props.username} /></div>
-        <div><DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} /></div>
-        <div><CategoryList categories={this.props.categories} selectedCategory={this.state.selected_category} /></div>
+        <div><DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} /></div>
+        <div><CategoryList categories={this.props.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} /></div>
         <div><TransactionTable columnLabels={this.props.columnLabels} transactions={this.props.transactions} /></div>
       </div>
     );

@@ -4,11 +4,11 @@ import DatePicker from 'react-datepicker';
 let DateRangeCriteria = React.createClass({
 
   handleStartDateChange: function(date) {
-    this.props.startDate = date; // ??
+    this.props.onStartDateChange(date);
   },
 
   handleEndDateChange: function(date) {
-    this.props.endDate = date; // ??
+    this.props.onEndDateChange(date);
   },
 
   render: function() {
