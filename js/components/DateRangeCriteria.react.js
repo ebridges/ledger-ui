@@ -1,25 +1,14 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
-import moment from 'moment';
 
 let DateRangeCriteria = React.createClass({
-  getInitialState: function() {
-    return {
-      start_date: moment().subtract(6, 'months'),
-      end_date: moment(),
-    }
-  },
 
   handleStartDateChange: function(date) {
-    this.setState({
-      start_date: date
-    });
+    this.props.startDate = date; // ??
   },
 
   handleEndDateChange: function(date) {
-    this.setState({
-      end_date: date
-    });
+    this.props.endDate = date; // ??
   },
 
   render: function() {
@@ -27,13 +16,13 @@ let DateRangeCriteria = React.createClass({
         <DatePicker
           key="startDate"
           dateFormat="YYYY/MM/DD"
-          selected={this.state.start_date}
+          selected={this.props.startDate}
           onChange={this.handleStartDateChange}
         />
         <DatePicker
           key="endDate"
           dateFormat="YYYY/MM/DD"
-          selected={this.state.end_date}
+          selected={this.props.endDate}
           onChange={this.handleEndDateChange}
         />
       </div>

@@ -8,7 +8,7 @@ let CategoryList = React.createClass({
     });
 
     return (
-      <select>
+      <select value={this.props.selectedCategory}>
         {categoryOptions}
       </select>
     );
