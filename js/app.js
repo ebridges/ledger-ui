@@ -3,10 +3,10 @@ import Ledger from './components/Ledger.react.js';
 
 var username = "ebridges";
 var categories = [
-  {"id": 1, "name": "Categories..."},
-  {"id": 2, "name": "Meals"},
-  {"id": 3, "name": "Groceries"},
-  {"id": 4, "name": "Entertainment"}
+  {"id": 0, "name": "Categories..."},
+  {"id": 1, "name": "Meals"},
+  {"id": 2, "name": "Groceries"},
+  {"id": 3, "name": "Entertainment"}
 ];
 var columnLabels = ["Txn Date", "Category", "Description", "Description (orig)", "Amount"];
 var transactions = [
