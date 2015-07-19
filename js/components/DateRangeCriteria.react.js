@@ -9,7 +9,7 @@ let DateRangeCriteria = React.createClass({
       end_date: moment(),
     }
   },
-  
+
   handleStartDateChange: function(date) {
     this.setState({
       start_date: date
@@ -26,6 +26,7 @@ let DateRangeCriteria = React.createClass({
     return <div>
         <DatePicker
           key="startDate"
+          dateFormat="YYYY/MM/DD"
           selected={this.state.start_date}
           onChange={this.handleStartDateChange}
         />
