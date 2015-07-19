@@ -42,6 +42,21 @@
   }
 ]
 ```
+
+### Component Props
+
+* Username
+* Category List (id, name)
+* Column Label List
+* Transaction List (id, txnDate, txnYear, txnMonth, txnDay, description, originalDescription, amount, txnType, accountName, ...)
+
+### UI State
+
+* Start date (default: today - 6m)
+* End date (default: today)
+* Currently selected category (default: 0)
+* Filtered list of transactions
+
 ### Reference
 
 * Install new packages:
