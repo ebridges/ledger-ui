@@ -5,7 +5,16 @@
 * https://facebook.github.io/react/docs/thinking-in-react.html
 * https://github.com/Hacker0x01/react-datepicker
 * http://babeljs.io/blog/2015/06/07/react-on-es6-plus/
-*
+* [Flux Announcement Blog Post](http://facebook.github.io/react/blog/2014/05/06/flux.html)
+* [Flux Overview & Architecture video](http://facebook.github.io/flux/docs/overview.html)
+* [Flux ToDo Tutorial](http://facebook.github.io/flux/docs/todo-list.html)
+* [Flux ToDo MVC Example Code](https://github.com/facebook/flux/tree/master/examples/flux-todomvc)
+* [Flux Blog Post: Actions & Dispatcher](http://facebook.github.io/react/blog/2014/07/30/flux-actions-and-the-dispatcher.html)
+* [React -- Multiple Components](http://facebook.github.io/react/docs/multiple-components.html)
+* [Flux & React -- Pure UI](http://rauchg.com/2015/pure-ui/)
+* [ReactJS Date Picker Example](http://cdn.rawgit.com/Hacker0x01/react-datepicker/master/example/index.html)
+* [Overview of Javascript Modules](https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
+* [Setup HTML Layout](http://www.initializr.com/)
 
 ### Component Hierarchy
 
