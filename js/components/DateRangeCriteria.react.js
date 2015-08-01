@@ -12,7 +12,7 @@ let DateRangeCriteria = React.createClass({
   },
 
   render: function() {
-    return <div>
+    return <div id="datepicker-region">
         <DatePicker
           key="startDate"
           dateFormat="YYYY/MM/DD"
