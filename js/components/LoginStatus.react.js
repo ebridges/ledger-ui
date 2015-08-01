@@ -5,7 +5,7 @@ let LoginStatus = React.createClass({
     let useraccount = this.props.useraccount;
     let loginStatus = <div/>
 
-    if(username) {
+    if(useraccount.username) {
       loginStatus = <div>logged in as {useraccount.username}</div>
     } else {
       loginStatus = <div><a href="/login">login</a></div>
