@@ -1,8 +1,8 @@
 import React from 'react';
-import LoginStatus from './LoginStatus.react.js';
-import DateRangeCriteria from './DateRangeCriteria.react.js';
-import CategoryList from './CategoryList.react.js';
-import TransactionTable from './TransactionTable.react.js';
+import LoginStatus from './LoginStatus.jsx';
+import DateRangeCriteria from './DateRangeCriteria.jsx';
+import CategoryList from './CategoryList.jsx';
+import TransactionTable from './TransactionTable.jsx';
 import moment from 'moment';
 
 // https://facebook.github.io/react/tips/initial-ajax.html
