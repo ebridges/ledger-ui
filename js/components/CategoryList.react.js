@@ -9,12 +9,15 @@ let CategoryList = React.createClass({
 
   render: function() {
     let categoryOptions = [];
-    this.props.categories.forEach(function(category) {
+    let categoryList = this.props.categories;
+
+    for (var index = 0; index < categoryList.length; ++index) {
+      let category = categoryList[index];
       categoryOptions.push(<option key={category.id} value={category.id}>{category.name}</option>);
-    });
+    }
 
     return (
-      <select ref="categorySelector" value={this.props.selectedCategory} onChange={this.handleCategoryChange}>
+      <select className="category-selector" ref="categorySelector" value={this.props.selectedCategory} onChange={this.handleCategoryChange}>
         {categoryOptions}
       </select>
     );
