@@ -12,7 +12,7 @@ let LoginStatus = React.createClass({
     }
 
     return (
-      <div>{loginStatus}</div>
+      <div className="login-status-region">{loginStatus}</div>
     );
   }
 });
