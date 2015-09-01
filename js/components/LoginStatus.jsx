@@ -3,7 +3,7 @@ import React from 'react';
 let LoginStatus = React.createClass({
   render: function() {
     let useraccount = this.props.useraccount;
-    let loginStatus = <div/>
+    let loginStatus = <span/>
 
     if(useraccount.username) {
       loginStatus = <a href="/logout">{useraccount.username}</a>
