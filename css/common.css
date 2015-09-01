@@ -2,25 +2,32 @@ body {
   font-family: "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
-h1 {
-  font-size: 2em;
-  padding: .5em;
-  margin: .5em;
-  position: relative;
-}
-
-h2 {
-  font-size:1.5em;
-}
-
 input, select, th, td {
   font-size:1em;
   font-family: helvetica, arial, sans-serif;
 }
 
-.logo {
+#header {
+  clear: both;
+}
+
+#body {
+  clear: both;
+}
+
+.logo-region {
+  font-size: 2em;
+  padding: .5em;
+  margin: .5em;
   border: .1em double green;
-  padding: .2em;
-  float:right;
   text-transform: lowercase;
+  float: right;
+}
+
+.login-status-region {
+  font-size: 1.2em;
+  padding: 0em .5em 1.0em .5em;
+  margin: .25em .5em 1.0em .5em;
+  float: right;
+  clear: both;
 }

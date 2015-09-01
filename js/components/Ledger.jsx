@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './Logo.jsx';
 import LoginStatus from './LoginStatus.jsx';
 import DateRangeCriteria from './DateRangeCriteria.jsx';
 import CategoryList from './CategoryList.jsx';
@@ -11,6 +12,7 @@ let Ledger = React.createClass({
   getInitialState: function() {
 
     return {
+      application_name: "Ledger",
       start_date: moment().subtract(6, 'months'),
       end_date: moment(),
       column_labels: ["Txn Date", "Category", "Description", "Description (orig)", "Amount"],
@@ -50,11 +52,15 @@ let Ledger = React.createClass({
   render: function() {
     return (
       <div className="ledger">
-        <h1><span className="logo">Ledger</span></h1>
-        <h2><LoginStatus useraccount={this.state.useraccount} /></h2>
-        <div><DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} /></div>
-        <div><CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} /></div>
-        <div><TransactionTable columnLabels={this.state.column_labels} transactions={this.state.transactions} /></div>
+        <div id="header">
+          <Logo applicationname={this.state.application_name} />
+          <LoginStatus useraccount={this.state.useraccount} />
+        </div>
+        <div id="body">
+          <DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} />
+          <CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
+          <TransactionTable columnLabels={this.state.column_labels} transactions={this.state.transactions} />
+        </div>
       </div>
     );
   }
