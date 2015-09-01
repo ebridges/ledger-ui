@@ -12,8 +12,9 @@ let DateRangeCriteria = React.createClass({
   },
 
   render: function() {
-    return <div id="datepicker-region">
-        <div className="date-from-label">From</div>
+    return <span id="datepicker-region">
+      <span className="date-from-label">From</span>
+      <span className="date-from-picker">
         <DatePicker
           key="startDate"
           dateFormat="YYYY/MM/DD"
@@ -21,7 +22,9 @@ let DateRangeCriteria = React.createClass({
           onChange={this.handleStartDateChange}
           className="date-from-chooser"
         />
-        <div className="date-to-label">To</div>
+      </span>
+      <span className="date-to-label">To</span>
+      <span className="date-to-picker">
         <DatePicker
           key="endDate"
           dateFormat="YYYY/MM/DD"
@@ -29,8 +32,9 @@ let DateRangeCriteria = React.createClass({
           onChange={this.handleEndDateChange}
           className="date-to-chooser"
         />
-      </div>
-    }
+      </span>
+    </span>
+  }
 });
 
 export default DateRangeCriteria;

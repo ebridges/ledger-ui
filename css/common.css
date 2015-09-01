@@ -56,3 +56,28 @@ input, select, th, td {
   float: right;
   clear: both;
 }
+
+.category-selector-region {
+  margin-right:4em;
+}
+
+.datepicker-region {
+}
+
+.date-from-label  {
+  margin-right:1em;
+}
+
+.date-from-picker {
+  display:inline-block;
+  margin-right:1.5em;
+}
+
+.date-to-label  {
+  margin-right:1em;
+}
+
+.date-to-picker {
+  display:inline-block;
+  margin-right:1.5em;
+}
