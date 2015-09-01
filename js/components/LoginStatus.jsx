@@ -6,13 +6,13 @@ let LoginStatus = React.createClass({
     let loginStatus = <div/>
 
     if(useraccount.username) {
-      loginStatus = <div>logged in as {useraccount.username}</div>
+      loginStatus = <span>logged in as {useraccount.username}</span>
     } else {
-      loginStatus = <div><a href="/login">login</a></div>
+      loginStatus = <span><a href="/login">login</a></span>
     }
 
     return (
-      <div className="login-status-region">{loginStatus}</div>
+      <span className="login-status-region">{loginStatus}</span>
     );
   }
 });

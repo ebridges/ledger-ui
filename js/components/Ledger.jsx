@@ -50,8 +50,8 @@ let Ledger = React.createClass({
   render: function() {
     return (
       <div className="ledger">
-        <div><h1>Ledger</h1></div>
-        <div><LoginStatus useraccount={this.state.useraccount} /></div>
+        <h1><span className="logo">Ledger</span></h1>
+        <h2><LoginStatus useraccount={this.state.useraccount} /></h2>
         <div><DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} /></div>
         <div><CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} /></div>
         <div><TransactionTable columnLabels={this.state.column_labels} transactions={this.state.transactions} /></div>
