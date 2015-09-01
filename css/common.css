@@ -15,6 +15,31 @@ input, select, th, td {
   clear: both;
 }
 
+#navigation {
+  position:relative;
+  padding: 1em;
+  margin: 1em;
+  border-bottom: .1em dotted gray;
+}
+
+#navigation-left {
+  position:absolute;
+  top:0;
+  left:0;
+  width: auto;
+}
+
+#navigation-right {
+  position:absolute;
+  top:0;
+  right:0;
+  width: auto;
+}
+
+#content {
+
+}
+
 .logo-region {
   font-size: 2em;
   padding: .5em;

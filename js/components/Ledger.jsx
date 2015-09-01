@@ -18,7 +18,7 @@ let Ledger = React.createClass({
       column_labels: ["Txn Date", "Category", "Description", "Description (orig)", "Amount"],
       selected_category: 0,
       categories: [
-        {"id": 0, "name": "Categories..."},
+        {"id": 0, "name": "All categories"},
         {"id": 1, "name": "Meals"},
         {"id": 2, "name": "Groceries"},
         {"id": 3, "name": "Entertainment"}
@@ -57,9 +57,17 @@ let Ledger = React.createClass({
           <LoginStatus useraccount={this.state.useraccount} />
         </div>
         <div id="body">
-          <DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} />
-          <CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
-          <TransactionTable columnLabels={this.state.column_labels} transactions={this.state.transactions} />
+          <div id="navigation">
+            <div id="navigation-left">
+              <CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
+            </div>
+            <div id="navigation-right">
+              <DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} />
+            </div>
+          </div>
+          <div id="content">
+            <TransactionTable columnLabels={this.state.column_labels} transactions={this.state.transactions} />
+          </div>
         </div>
       </div>
     );
