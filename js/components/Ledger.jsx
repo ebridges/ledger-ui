@@ -59,12 +59,8 @@ let Ledger = React.createClass({
         </div>
         <div id="body">
           <div id="navigation">
-            <div id="navigation-left">
-              <CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
-            </div>
-            <div id="navigation-right">
-              <DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} />
-            </div>
+            <CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
+            <DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} />
           </div>
           <div id="content">
             <TransactionTable columnLabels={this.state.column_labels} transactions={this.state.transactions} />
