@@ -44,18 +44,21 @@ input, select, th, td {
 }
 
 .category-selector-region {
-  margin-right:4em;
 }
 
 .category-selector {
+  border: .2em solid;
   padding: .5em;
   font-weight: bold;
 }
 
 .datepicker-region {
+  margin-top: 1em;
 }
 
 .date-from-label  {
+  font-weight: bold;
+  font-size: 1.2em;
   margin-right:1em;
 }
 
@@ -64,11 +67,25 @@ input, select, th, td {
   margin-right:1.5em;
 }
 
+.date-from-chooser {
+  border: .2em solid;
+  padding: .5em;
+  font-weight: bold;
+}
+
 .date-to-label  {
+  font-weight: bold;
+  font-size: 1.2em;
   margin-right:1em;
 }
 
 .date-to-picker {
   display:inline-block;
   margin-right:1.5em;
+}
+
+.date-to-chooser {
+  border: .2em solid;
+  padding: .5em;
+  font-weight: bold;
 }

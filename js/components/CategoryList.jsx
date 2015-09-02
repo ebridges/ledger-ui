@@ -17,11 +17,11 @@ let CategoryList = React.createClass({
     }
 
     return (
-      <span className="category-selector-region">
+      <div className="category-selector-region">
         <select className="category-selector" ref="categorySelector" value={this.props.selectedCategory} onChange={this.handleCategoryChange}>
           {categoryOptions}
         </select>
-      </span>
+      </div>
     );
   }
 });

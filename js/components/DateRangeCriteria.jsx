@@ -12,7 +12,7 @@ let DateRangeCriteria = React.createClass({
   },
 
   render: function() {
-    return <span id="datepicker-region">
+    return <div className="datepicker-region">
       <span className="date-from-label">From</span>
       <span className="date-from-picker">
         <DatePicker
@@ -33,7 +33,7 @@ let DateRangeCriteria = React.createClass({
           className="date-to-chooser"
         />
       </span>
-    </span>
+    </div>
   }
 });
 
