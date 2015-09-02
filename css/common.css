@@ -4,7 +4,7 @@ body {
 
 input, select, th, td {
   font-size:1em;
-  font-family: helvetica, arial, sans-serif;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 #header {
