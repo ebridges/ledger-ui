@@ -21,7 +21,8 @@ let Ledger = React.createClass({
         {"id": 0, "name": "All categories"},
         {"id": 1, "name": "Meals"},
         {"id": 2, "name": "Groceries"},
-        {"id": 3, "name": "Entertainment"}
+        {"id": 3, "name": "Entertainment"},
+        {"id": 4, "name": "Work > Transportation > Public > Subway"}
       ],
       transactions: [
         {"id": 1, "txnDate": "2010-01-01", "categoryName": "Fruit", "description": "Apple purchase", "originalDescription" : "Apple purchase 0x1212", "amount": "$10.00"},
