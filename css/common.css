@@ -23,7 +23,7 @@ input, select, th, td {
 }
 
 #content {
-
+  padding: 1em;
 }
 
 .logo-region {
@@ -88,4 +88,59 @@ input, select, th, td {
   border: .2em solid;
   padding: .5em;
   font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+td.checkbox-region {
+  position: relative;
+  padding-right: 1em
+}
+
+input[type=checkbox] {
+	visibility: hidden;
+  margin: 0;
+}
+
+td.checkbox-region label {
+  cursor: pointer;
+	position: absolute;
+	width: 1.5em;
+	height: 1.5em;
+	top: 0.5em;
+	left: 0.5em;
+	background: white;
+	border:.1em solid #ddd;
+}
+
+td.checkbox-region label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: .8em;  /* these define the size of the stroke of the checkmark */
+	height: .5em;
+	background: transparent;
+	top: .3em;  /* these define the position of the box */
+	left: .3em;
+	border: .2em solid green;
+	border-top: none;  /* the left & bottom are the strokes of the checkmark */
+	border-right: none;
+	transform: rotate(-45deg);
+}
+
+td.checkbox-region label:hover::after {
+	opacity: 0.1;
+}
+
+td.checkbox-region input[type=checkbox]:checked + label:after {
+	opacity: 1;
 }
