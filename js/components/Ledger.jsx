@@ -15,15 +15,8 @@ let Ledger = React.createClass({
       application_name: "Ledger",
       start_date: moment().subtract(6, 'months'),
       end_date: moment(),
-      column_labels: ["Txn Date", "Category", "Description", "Description (orig)", "Amount"],
       selected_category: 0,
-      categories: [
-        {"id": 0, "name": "All categories"},
-        {"id": 1, "name": "Meals"},
-        {"id": 2, "name": "Groceries"},
-        {"id": 3, "name": "Entertainment"},
-        {"id": 4, "name": "Work > Transportation > Public > Subway"}
-      ],
+      column_labels: ["Txn Date", "Category", "Description", "Description (orig)", "Amount"],
       transactions: [
         {"id": 1, "txnDate": "2010-01-01", "categoryName": "Fruit", "description": "Apple purchase", "originalDescription" : "Apple purchase 0x1212", "amount": "$10.00"},
         {"id": 2, "txnDate": "2010-01-02", "categoryName": "Fruit", "description": "Orange purchase", "originalDescription" : "Orange purchase 0x1212", "amount": "$20.00"},
@@ -59,7 +52,7 @@ let Ledger = React.createClass({
         </div>
         <div id="body">
           <div id="navigation">
-            <CategoryList categories={this.state.categories} selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
+            <CategoryList selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
             <DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} />
           </div>
           <div id="content">
