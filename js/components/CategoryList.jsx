@@ -17,22 +17,28 @@ let CategoryList = React.createClass({
   componentDidMount: function() {
     let url = "http://localhost:9000/ledger/categories/list";
     var request = new XMLHttpRequest();
-    request.open('GET', url, true);
+    let doAsync = true;
+    request.open('GET', url, doAsync);
 
+    let localState = {};
     request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        // Success!
-        this.state.categories = JSON.parse(request.responseText);
-        console.log("this.state: "+JSON.stringify(this.state));
-      } else {
-        // We reached our target server, but it returned an error
-        console.log("Error response: "+request.responseText);
+      if (this.isMounted()) {
+        if (request.readyState === 4) {
+          if (request.status >= 200 && request.status < 400) {
+            // Success!
+            localState["categories"] = JSON.parse(request.responseText);
+            this.setState(localState);
+          } else {
+            // We reached our target server, but it returned an error
+            console.error("Error response: "+request.responseText);
+          }
+        }
       }
     }.bind(this);
 
     request.onerror = function() {
       // There was a connection error of some sort
-      console.log("Error: cannot connect"+request);
+      console.error("Error: cannot connect"+request);
     }.bind(this);
 
     request.send();
