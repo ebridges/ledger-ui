@@ -4,6 +4,7 @@ import { EmailSignInForm } from "redux-auth";
 export default class Login extends React.Component {
 
   constructor() {
+    super();
   }
 
   render() {
