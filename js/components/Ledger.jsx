@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo.jsx';
-import LoginStatus from './LoginStatus.jsx';
+import Login from './Login.jsx';
 import DateRangeCriteria from './DateRangeCriteria.jsx';
 import CategoryList from './CategoryList.jsx';
 import TransactionTable from './TransactionTable.jsx';
@@ -48,7 +48,7 @@ let Ledger = React.createClass({
       <div className="ledger">
         <div id="header">
           <Logo applicationname={this.state.application_name} />
-          <LoginStatus useraccount={this.state.useraccount} />
+          <Login useraccount={this.state.useraccount} />
         </div>
         <div id="body">
           <div id="navigation">
