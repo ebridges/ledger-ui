@@ -2,11 +2,16 @@ var webpack = require('webpack');
 module.exports = {
     entry: [
       'webpack/hot/only-dev-server',
-      "./js/app.js"
+      "./src/js/app.js"
     ],
     output: {
-        path: __dirname + '/build',
-        filename: "bundle.js"
+        path: './dist',
+        filename: "bundle.js",
+        publicPath: '/'
+    },
+    devServer: {
+        inline: true,
+        contentBase: './dist'
     },
     module: {
         loaders: [
@@ -18,5 +23,4 @@ module.exports = {
     plugins: [
       new webpack.NoErrorsPlugin()
     ]
-
 };
