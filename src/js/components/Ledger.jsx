@@ -1,17 +1,17 @@
 import React from 'react';
 import Logo from './Logo.jsx';
 import Login from './Login.jsx';
+import { AuthGlobals } from "redux-auth"
 import DateRangeCriteria from './DateRangeCriteria.jsx';
 import CategoryList from './CategoryList.jsx';
 import TransactionTable from './TransactionTable.jsx';
 import moment from 'moment';
 
 // https://facebook.github.io/react/tips/initial-ajax.html
-
-let Ledger = React.createClass({
-  getInitialState: function() {
-
-    return {
+export default class Ledger extends React.Component {
+  constructor() {
+    super();
+    this.state = {
       application_name: "Ledger",
       start_date: moment().subtract(6, 'months'),
       end_date: moment(),
@@ -22,30 +22,31 @@ let Ledger = React.createClass({
         {"id": 2, "txnDate": "2010-01-02", "categoryName": "Fruit", "description": "Orange purchase", "originalDescription" : "Orange purchase 0x1212", "amount": "$20.00"},
       ],
       useraccount: {"username": "ebridges"}
-    }
-  },
+    };
+  }
 
-  handleCategoryChange: function(selectedCategory) {
+  handleCategoryChange(selectedCategory) {
       this.setState({
           selected_category: selectedCategory
       });
-  },
+  }
 
-  handleStartDateChange: function(startDate) {
+  handleStartDateChange(startDate) {
       this.setState({
           start_date: startDate
       });
-  },
+  }
 
-  handleEndDateChange: function(endDate) {
+  handleEndDateChange(endDate) {
       this.setState({
           end_date: endDate
       });
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div className="ledger">
+        <AuthGlobals />
         <div id="header">
           <Logo applicationname={this.state.application_name} />
           <Login useraccount={this.state.useraccount} />
@@ -62,6 +63,4 @@ let Ledger = React.createClass({
       </div>
     );
   }
-});
-
-export default Ledger;
+}
