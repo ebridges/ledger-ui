@@ -5,6 +5,12 @@ export default class Login extends React.Component {
 
   constructor() {
     super();
+    this.state = {
+      useraccount: {
+        username: '',
+        password: ''
+      }
+    }
   }
 
   render() {
@@ -13,7 +19,7 @@ export default class Login extends React.Component {
     if(this.state.useraccount.username) {
       loginStatus = <a href="/logout">{this.state.useraccount.username}</a>
     } else {
-      loginStatus = <EmailSignInForm />
+      loginStatus = <EmailSignInForm endpoint="default"/>
     }
 
     return (
