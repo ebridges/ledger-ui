@@ -1,6 +1,8 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
 
+require('../../css/DateRangeCriteria.css');
+
 let DateRangeCriteria = React.createClass({
 
   handleStartDateChange: function(date) {
