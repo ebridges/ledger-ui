@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 export default class CategoryList extends Component {
   render() {
     const { onCategoryChange, selectedCategory, categoryList } = this.props;
+
     let categoryOptions = [];
     if(categoryList) {
       for (var index = 0; index < categoryList.length; ++index) {
@@ -14,7 +15,7 @@ export default class CategoryList extends Component {
     return (
       <div className="category-selector-region">
         <select className="category-selector"
-                value={selectedCategory}
+                value={selectedCategory.id}
                 onChange={(category) => onCategoryChange(category.target.selectedIndex)}>
           {categoryOptions}
         </select>
