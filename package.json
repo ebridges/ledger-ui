@@ -16,27 +16,26 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/ebridges/single-page-app#readme",
   "dependencies": {
-    "babel-core": "^5.6.18",
-    "babel-loader": "^5.3.1",
     "lodash": "^3.10.0",
     "moment": "^2.10.3",
-    "node-libs-browser": "^0.5.2",
-    "react": "^0.14.3",
+    "react": "^0.14.6",
     "react-datepicker": "latest",
-    "react-hot-loader": "^1.2.8",
-    "redux-auth": "0.0.2",
-    "redux-router": "^1.0.0-beta3",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.6",
     "redux-thunk": "^1.0.3",
-    "webpack": "^1.10.1",
-    "webpack-dev-server": "^1.10.1"
+    "request": "^2.67.0"
   },
   "devDependencies": {
-    "6to5-core": "^3.6.5",
-    "6to5-loader": "^3.0.0",
+    "babel": "^6.3.26",
+    "babel-core": "^5.6.18",
+    "babel-loader": "^5.3.1",
     "css-loader": "^0.23.1",
-    "es6-loader": "^0.2.0",
+    "json-loader": "^0.5.4",
     "jsx-loader": "^0.13.2",
     "react-hot-loader": "^1.3.0",
-    "style-loader": "^0.13.0"
+    "style-loader": "^0.13.0",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
   }
 }
