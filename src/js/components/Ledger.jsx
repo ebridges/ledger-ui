@@ -1,66 +1,88 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux'
 import Logo from './Logo.jsx';
 import Login from './Login.jsx';
-import { AuthGlobals } from "redux-auth"
+import Logout from './Logout.jsx';
 import DateRangeCriteria from './DateRangeCriteria.jsx';
 import CategoryList from './CategoryList.jsx';
 import TransactionTable from './TransactionTable.jsx';
-import moment from 'moment';
+import { loginUser, logoutUser } from '../api/AuthnApi';
+import { categoryChanged, loadCategories } from '../actions/CategoryListActions'
 
 // https://facebook.github.io/react/tips/initial-ajax.html
-export default class Ledger extends React.Component {
+export default class Ledger extends Component {
   constructor() {
     super();
     this.state = {
       application_name: "Ledger",
-      start_date: moment().subtract(6, 'months'),
-      end_date: moment(),
-      selected_category: 0,
       column_labels: ["Txn Date", "Category", "Description", "Description (orig)", "Amount"],
       transactions: [
-        {"id": 1, "txnDate": "2010-01-01", "categoryName": "Fruit", "description": "Apple purchase", "originalDescription" : "Apple purchase 0x1212", "amount": "$10.00"},
-        {"id": 2, "txnDate": "2010-01-02", "categoryName": "Fruit", "description": "Orange purchase", "originalDescription" : "Orange purchase 0x1212", "amount": "$20.00"},
-      ],
-      useraccount: {"username": "ebridges"}
+        {
+          "id": 1,
+          "txnDate": "2010-01-01",
+          "categoryName": "Fruit",
+          "description": "Apple purchase",
+          "originalDescription": "Apple purchase 0x1212",
+          "amount": "$10.00"
+        },
+        {
+          "id": 2,
+          "txnDate": "2010-01-02",
+          "categoryName": "Fruit",
+          "description": "Orange purchase",
+          "originalDescription": "Orange purchase 0x1212",
+          "amount": "$20.00"
+        }
+      ]
     };
   }
 
-  handleCategoryChange(selectedCategory) {
-      this.setState({
-          selected_category: selectedCategory
-      });
-  }
-
-  handleStartDateChange(startDate) {
-      this.setState({
-          start_date: startDate
-      });
-  }
-
-  handleEndDateChange(endDate) {
-      this.setState({
-          end_date: endDate
-      });
+  componentWillMount() {
+    this.props.dispatch(loadCategories())
   }
 
   render() {
+    const { dispatch, isAuthenticated, errorMessage } = this.props;
     return (
       <div className="ledger">
-        <AuthGlobals />
         <div id="header">
-          <Logo applicationname={this.state.application_name} />
-          <Login useraccount={this.state.useraccount} />
+          <Logo applicationname={this.state.application_name}/>
+          {isAuthenticated && <Logout onLogoutClick={() => dispatch(logoutUser())}/>}
+          {!isAuthenticated &&
+          <Login onLoginClick={(creds) => dispatch(loginUser(creds))}
+                 onErrorMessage={errorMessage}/>}
         </div>
         <div id="body">
           <div id="navigation">
-            <CategoryList selectedCategory={this.state.selected_category} onCategoryChange={this.handleCategoryChange} />
-            <DateRangeCriteria startDate={this.state.start_date} endDate={this.state.end_date} onStartDateChange={this.handleStartDateChange} onEndDateChange={this.handleEndDateChange} />
+            <CategoryList onCategoryChange={ (selectedCategory) => dispatch(categoryChanged(selectedCategory)) } />
+            <DateRangeCriteria />
           </div>
           <div id="content">
-            <TransactionTable columnLabels={this.state.column_labels} transactions={this.state.transactions} />
+            <TransactionTable columnLabels={this.state.column_labels}
+                              transactions={this.state.transactions}/>
           </div>
         </div>
       </div>
     );
   }
 }
+
+Ledger.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  errorMessage: PropTypes.string
+};
+
+function mapStateToProps(state) {
+  //noinspection UnnecessaryLocalVariableJS
+  const { auth } = state;
+//noinspection UnnecessaryLocalVariableJS
+  const { isAuthenticated, errorMessage } = auth;
+
+  return {
+    isAuthenticated,
+    errorMessage
+  }
+}
+
+export default connect(mapStateToProps)(Ledger);

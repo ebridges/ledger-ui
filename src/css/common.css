@@ -35,12 +35,53 @@ input, select, th, td {
   float: right;
 }
 
-.login-status-region {
-  font-size: 1.2em;
+.control-label {
+  visibility: hidden;
+}
+
+.form-group {
+  margin-bottom: .5em;
+}
+
+.email-sign-in-form {
+  text-align: right;
+  font-size: 1em;
   padding: 0em .5em 1.0em .5em;
   margin: .25em .5em 1.0em .5em;
   float: right;
   clear: both;
+}
+
+.email-sign-in-email {
+  font-size: 1em;
+  border: .2em solid;
+  padding: .5em;
+  font-weight: bold;
+  height: 2.5em;
+  border-radius: 0;
+}
+
+.email-sign-in-password {
+  font-size: 1em;
+  border: .2em solid;
+  padding: .5em;
+  font-weight: bold;
+  height: 2.5em;
+  border-radius: 0;
+}
+
+.email-sign-in-submit {
+  font-size: 1em;
+  border: .2em solid;
+  padding: .5em;
+  font-weight: bold;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  height: 2.5em;
+  border-radius: 0;
+}
+
+.email-sign-in-error {
+
 }
 
 .category-selector-region {

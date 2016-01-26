@@ -1,29 +1,34 @@
-import React from 'react';
-import { EmailSignInForm } from "redux-auth";
+import React, { Component, PropTypes } from 'react';
 
-export default class Login extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {
-      useraccount: {
-        username: '',
-        password: ''
-      }
-    }
-  }
+export default class Login extends Component {
 
   render() {
-    let loginStatus;
+    const { errorMessage } = this.props;
 
-    if(this.state.useraccount.username) {
-      loginStatus = <a href="/logout">{this.state.useraccount.username}</a>
-    } else {
-      loginStatus = <EmailSignInForm endpoint="default"/>
-    }
+    return (<div className="email-sign-in-form">
+      <input type='text' ref='username' className="form-control email-sign-in-email" placeholder='Username'/>
+      <input type='password' ref='password' className="form-control email-sign-in-password" placeholder='Password'/>
+      <button onClick={(event) => this.handleClick(event)} className="btn btn-primary email-sign-in-submit">
+        Login
+      </button>
 
-    return (
-      <div className="login-status-region">{loginStatus}</div>
-    );
+      {errorMessage &&
+      <p className='email-sign-in-error'>{errorMessage}</p>
+      }
+    </div>);
+  }
+
+  handleClick(event) {
+    const username = this.refs.username;
+    const password = this.refs.password;
+    const creds = {username: username.value.trim(), password: password.value.trim()};
+    this.props.onLoginClick(creds);
   }
 }
+
+// @ToDo connect this to the state using mapStateToProps
+// @Todo what about isFetching?
+//Login.propTypes = {
+//  onLoginClick: PropTypes.func.isRequired,
+//  errorMessage: PropTypes.string
+//};

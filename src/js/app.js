@@ -1,23 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Ledger from './components/Ledger.jsx';
-import LedgrStore from './store/LedgrStore';
 import { Provider } from 'react-redux';
-import { configure } from "redux-auth";
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import ledgerReducer from './reducers/LedgerReducer';
 
 require('../css/reset.css');
 require('../css/common.css');
 
-var store = LedgrStore.store();
+let createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 
-// maybe move this to LedgrStore?
-store.dispatch(configure({
-  apiUrl: "http://localhost:9000"
-}));
+let store = createStoreWithMiddleware(ledgerReducer);
 
 ReactDOM.render(
   <Provider store={ store }>
-      <Ledger/>
+      <Ledger />
   </Provider>,
   document.getElementById('ledgr')
 );
