@@ -9,7 +9,7 @@ import { CATEGORY_CHANGED, CATEGORY_LIST_REQUEST, CATEGORY_LIST_SUCCESS, CATEGOR
 // The auth reducer. The starting state sets authentication
 // based on a token being in local storage. In a real app,
 // we would also want a util to check if the token is expired.
-function auth(state = {
+function authState(state = {
     isFetching: false,
     isAuthenticated: localStorage.getItem('id_token') ? true : false
 }, action = {}) {
@@ -43,7 +43,7 @@ function auth(state = {
     }
 }
 
-function dateRange(state = {
+function dateRangeState(state = {
   startDate: moment().subtract(6, 'months'),
   endDate: moment()}, action = {}) {
   switch (action.type) {
@@ -95,8 +95,8 @@ function categoryState(state = {
 // We combine the reducers here so that they
 // can be left split apart above
 const ledgerReducer = combineReducers({
-  auth,
-  dateRange,
+  authState,
+  dateRangeState,
   categoryState
 });
 

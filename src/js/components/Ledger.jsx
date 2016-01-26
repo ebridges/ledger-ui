@@ -75,9 +75,9 @@ Ledger.propTypes = {
 
 function mapStateToProps(state) {
   //noinspection UnnecessaryLocalVariableJS
-  const { auth } = state;
+  const { authState } = state;
 //noinspection UnnecessaryLocalVariableJS
-  const { isAuthenticated, errorMessage } = auth;
+  const { isAuthenticated, errorMessage } = authState;
 
   return {
     isAuthenticated,

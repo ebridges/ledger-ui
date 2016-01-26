@@ -43,9 +43,9 @@ DateRangeCriteria.propTypes = {
 
 function mapStateToProps(state) {
   //noinspection UnnecessaryLocalVariableJS
-  const { dateRange } = state;
+  const { dateRangeState } = state;
 //noinspection UnnecessaryLocalVariableJS
-  const { startDate, endDate } = dateRange;
+  const { startDate, endDate } = dateRangeState;
 
   return {
     startDate,
